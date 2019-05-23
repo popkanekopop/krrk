@@ -35,11 +35,15 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'haml-rails' # ERB じゃなくて Haml を使いたい
-gem 'therubyracer' #lessを使うために必要
-gem "less-rails" #lessを使うよ宣言
+gem 'mini_racer'
 gem 'twitter-bootstrap-rails' # Bootstrap の layout とかlessとかを generate してくれる
 gem "font-awesome-rails" #fontawsomeを使えるように
 gem 'pry-rails', :group => :development #デバッグ用
+gem 'bcrypt', '~> 3.1.11' #セキュアなpassword用
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
+# gem 'will_paginate',           '3.0.7'
+# gem 'bootstrap-will_paginate', '0.0.10'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
