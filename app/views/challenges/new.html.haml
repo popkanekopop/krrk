@@ -1,0 +1,17 @@
+= form_for(@challenge, html: { multipart: true }) do |f|
+  -#  html: { multipart: true }はファイルのアップロードに必要
+  -# = render 'shared/error_messages', object: f.object
+  .field
+    = f.text_area :title, placeholder: "例）１ヶ月で５キロ減量達成するぞ！"
+    = f.text_area :body, placeholder: "例）ダイエット頑張ります！"
+  = f.submit "Post", class: "btn btn-primary"
+  %span.picture
+    = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png'
+
+:javascript
+  $('#challenge_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });

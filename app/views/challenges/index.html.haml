@@ -1,0 +1,5 @@
+- if @challenges.any?
+  - @challenges.each do |challenge|
+    =link_to challenge.title, challenge_path(id: challenge.id)
+    = image_tag challenge.picture.url if challenge.picture?
+    %p= challenge.body

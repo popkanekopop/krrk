@@ -5,3 +5,10 @@
         = gravatar_for @user
         = @user.nickname
         #{@user.email}
+  .col-md-8
+    %a (#{@user.challenges.count})
+    - if @user.challenges.any?
+      %h3
+        Challenges (#{@user.challenges.count})
+      %ol
+        -# = render @challenges

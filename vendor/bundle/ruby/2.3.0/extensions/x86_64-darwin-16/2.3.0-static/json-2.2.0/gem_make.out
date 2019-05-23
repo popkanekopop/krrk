@@ -1,0 +1,13 @@
+current directory: /Users/yuki/workspace/krrk/vendor/bundle/ruby/2.3.0/gems/json-2.2.0/ext/json
+/Users/yuki/.rbenv/versions/2.3.4/bin/ruby -r ./siteconf20190524-85084-xaikun.rb extconf.rb
+creating Makefile
+
+current directory: /Users/yuki/workspace/krrk/vendor/bundle/ruby/2.3.0/gems/json-2.2.0/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/yuki/workspace/krrk/vendor/bundle/ruby/2.3.0/gems/json-2.2.0/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/yuki/workspace/krrk/vendor/bundle/ruby/2.3.0/gems/json-2.2.0/ext/json
+make "DESTDIR=" install

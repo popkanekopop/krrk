@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_23_155015) do
+ActiveRecord::Schema.define(version: 2019_05_23_174213) do
+
+  create_table "challenges", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "body", null: false
+    t.bigint "user_id"
+    t.string "title", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "picture"
+    t.index ["user_id"], name: "index_challenges_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
@@ -22,4 +32,5 @@ ActiveRecord::Schema.define(version: 2019_05_23_155015) do
     t.boolean "admin", default: false
   end
 
+  add_foreign_key "challenges", "users"
 end

@@ -1,0 +1,5 @@
+%p= @challenge.title
+%p= @challenge.body
+- if current_user?(@challenge.user)
+  = link_to "delete", @challenge, method: :delete, |
+    data: { confirm: "You sure?" }                |

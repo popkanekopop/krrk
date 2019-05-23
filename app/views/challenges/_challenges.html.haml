@@ -1,0 +1,6 @@
+%li{:id => "challenge-#{challenge.id}"}
+  = link_to gravatar_for(challenge.user, size: 50), challenge.user
+  %span.user= link_to challenge.user.name, challenge.user
+  %span.content= challenge.content
+  %span.timestamp
+    Posted #{time_ago_in_words(challenge.created_at)} ago.
