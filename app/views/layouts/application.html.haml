@@ -1,6 +1,7 @@
 !!! 5
 %html(lang="en")
   %head
+    %title= full_title(yield(:title))
     %meta(charset="utf-8")
     %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
@@ -19,22 +20,40 @@
 
 
   %body
-    %nav.global-header.clearfix
-      %a.navbar-brand(href="#") Krrk
-      - if current_user.present?
-        %p= current_user.nickname
-    .navbar.navbar-default.navbar-static-top
-      .container
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-        .navbar-collapse.collapse.navbar-responsive-collapse
-          %ul.nav.navbar-nav
-            %li= link_to "Link 1", "/path1"
-            %li= link_to "Link 2", "/path2"
-            %li= link_to "Link 3", "/path3"
-            %li= link_to "Link 3", "/path3"
-            %li= link_to "Sign up now!", signup_path, class: "btn"
+    %nav.navbar.navbar-expand-sm.navbar-dark.bg-info.mt-3.mb-3
+      %button.navbar-toggler{"aria-controls" => "navbarNav4", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav4", "data-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
+      %a.navbar-brand{:href => "/"} キラレコ
+      .collapse.navbar-collapse.justify-content-end
+        %ul.navbar-nav
+          %li.nav-item
+            %a.nav-link{:href => "/signup"} 新規登録
+          %li.nav-item
+            %a.nav-link{:href => "users"} ユーザー一覧
+          %li.nav-item
+            %a.nav-link{:href => "#"} Challenge投稿
+
+
+    -#     = link_to "Krrk", '#', id: "logo"
+    -#     %nav
+    -#       %ul.nav.navbar-nav.navbar-right
+    -#         %li= link_to "Home",   '#'
+    -#         %li= link_to "Help",   '#'
+    -#         %li= link_to "Log in", '#'
+    -#     - if current_user.present?
+    -#       %p= "今ログインしているユーザー：#{current_user.nickname}"
+    -# .navbar.navbar-default.navbar-static-top
+    -#   .container
+    -#     %span.icon-bar
+    -#     %span.icon-bar
+    -#     %span.icon-bar
+    -#     .navbar-collapse.collapse.navbar-responsive-collapse
+    -#       %ul.nav.navbar-nav
+    -#         %li= link_to "Link 1", "/path1"
+    -#         %li= link_to "Link 2", "/path2"
+    -#         %li= link_to "Link 3", "/path3"
+    -#         %li= link_to "Link 3", "/path3"
+    -#         %li= link_to "Sign up now!", signup_path, class: "btn"
 
     .container
       .row
