@@ -28,7 +28,16 @@ class ChallengesController < ApplicationController
   def destroy
     @challenge.destroy
     flash[:success] = "Challenge deleted"
-    redirect_to request.referrer || root_url
+    redirect_to root_url
+  end
+
+  def post_image
+    image_uploader = Hoge::ImageUploader.new(params[:upload_image])
+    if image_uploader.upload_image
+      # 成功
+    else
+      # 失敗
+    end
   end
 
   private def challenge_params
