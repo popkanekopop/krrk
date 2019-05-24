@@ -23,6 +23,7 @@ class ChallengesController < ApplicationController
 
   def show
     @challenge = Challenge.find_by(id: params[:id])
+    @posts = @challenge.posts
   end
 
   def destroy
@@ -31,13 +32,9 @@ class ChallengesController < ApplicationController
     redirect_to root_url
   end
 
-  def post_image
-    image_uploader = Hoge::ImageUploader.new(params[:upload_image])
-    if image_uploader.upload_image
-      # 成功
-    else
-      # 失敗
-    end
+  def new_post
+    @challenge = Challenge.find_by(id: params[:id])
+    @post = Post.new
   end
 
   private def challenge_params

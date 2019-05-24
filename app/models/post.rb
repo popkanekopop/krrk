@@ -1,8 +1,7 @@
-class Challenge < ApplicationRecord
-  belongs_to :user
-  has_many :posts, dependent: :destroy
+class Post < ApplicationRecord
+  belongs_to :challenge
 
-  validates :user_id, presence: true
+  validates :challenge_id, presence: true
   validates :title, presence: true, length: { maximum: 140 }
   validate  :picture_size
 

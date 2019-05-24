@@ -2,5 +2,12 @@
 %p= @challenge.body
 = image_tag @challenge.picture.url if @challenge.picture?
 - if current_user?(@challenge.user)
-  = link_to "delete", @challenge, method: :delete, |
-    data: { confirm: "You sure?" }                |
+  = link_to "delete", @challenge, method: :delete, data: { confirm: "You sure?" }
+= link_to "Postを投稿", new_post_challenge_path, method: :get
+.col-md-8
+  - if @challenge.posts.any?
+    %h3
+      Posts (#{@challenge.posts.count})
+    - @challenge.posts.each do |post|
+      %ol
+        = render "posts/posts", post: post

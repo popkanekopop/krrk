@@ -1,0 +1,5 @@
+%p= @post.title
+%p= @post.body
+= image_tag @post.picture.url if @post.picture?
+- if current_user?(@post.challenge.user)
+  = link_to "delete", @post, method: :delete, data: { confirm: "You sure?" }
